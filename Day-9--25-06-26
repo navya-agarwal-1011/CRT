@@ -1,0 +1,23 @@
+*****************************LEETCODE PROBLEM:150************************************
+**********https://leetcode.com/problems/evaluate-reverse-polish-notation/************
+#CPP #STACK
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> st;
+        for(string& s:tokens){
+            if(s=="+"||s=="*"||s=="/"||s=="-"){
+                int v1=st.top();st.pop();
+                int v2=st.top();st.pop();
+                if(s=="+") st.push(v2+v1);
+                else if(s=="-") st.push(v2-v1);
+                else if(s=="*") st.push(v2*v1);
+                else if(s=="/") st.push(v2/v1);
+            }
+            else{
+                st.push(stoi(s));
+            }
+        }
+         return st.top();
+    }
+};
