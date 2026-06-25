@@ -63,8 +63,6 @@ public:
        traversal(root,ans);
        return ans;
 }
-
-    
 };
 
 ************************LEETCODE PROBLEM:145*****************************
