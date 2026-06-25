@@ -43,3 +43,50 @@ void traversal(TreeNode* root,vector<int> &ans){
 
 };
 
+*************************************LEETCODE PROBLEM:94***********************************
+**********************************94. Binary Tree Inorder Traversal************************
+#RECURSION
+class Solution {
+public:
+    
+     void traversal(TreeNode* root,vector<int> &ans){
+     if(root==nullptr){
+            return;
+        }
+        
+        traversal(root->left,ans);
+        ans.push_back(root->val);
+        traversal(root->right,ans);
+     }
+       vector<int> inorderTraversal(TreeNode* root) {
+       vector<int> ans;
+       traversal(root,ans);
+       return ans;
+}
+
+    
+};
+
+************************LEETCODE PROBLEM:145*****************************
+***********************binary-tree-postorder-traversal*******************
+
+
+
+class Solution {
+public:
+    
+     void traversal(TreeNode* root,vector<int> &ans){
+     if(root==nullptr){
+            return;
+        }
+        
+        traversal(root->left,ans);
+        traversal(root->right,ans);
+        ans.push_back(root->val);
+     }
+       vector<int> postorderTraversal(TreeNode* root) {
+       vector<int> ans;
+       traversal(root,ans);
+       return ans;
+}
+};
