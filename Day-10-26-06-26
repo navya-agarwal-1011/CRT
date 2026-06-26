@@ -46,3 +46,53 @@ int height(TreeNode* root){
         return height(root)!=-1;
     }
 };
+
+*****************************LEETCODE PROBLEM:543****************************
+*************leetcode.com/problems/diameter-of-binary-tree/******************
+class Solution {
+public:
+    // 1. Fixed: Changed parameter type to TreeNode*
+    int traversal(TreeNode* root) {
+        if (root == nullptr) {
+            return 0; 
+        }
+        int lh = traversal(root->left);
+        int rh = traversal(root->right);
+        
+                int max_depth = std::max(lh, rh) + 1; 
+        return max_depth;
+    }
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        
+        if (root == nullptr) {
+            return 0;
+        }
+
+        int dia1 = diameterOfBinaryTree(root->left);
+        int dia2 = diameterOfBinaryTree(root->right);
+        int dia3 = traversal(root->left) + traversal(root->right);
+
+        return std::max(dia1, std::max(dia2, dia3));
+    }
+};
+
+###########################OPTIMAL APPROACH#############################
+
+class Solution {
+public:
+int ans=0;
+    int height(TreeNode*root){
+        if(!root)return 0;
+        int left=height(root->left);
+        int right=height(root->right);
+        ans=max(ans,left+right);
+        return max(left,right)+1;
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(!root)return 0;
+        height(root);
+        return ans;
+    }
+};
+
