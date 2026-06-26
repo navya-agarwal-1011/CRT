@@ -26,5 +26,26 @@ public:
 }
 };
 
+*******************************LLETCODE PROBLEM:110***********************************
+*******************https://leetcode.com/problems/balanced-binary-tree/****************
+
+class Solution {
+public:
+int height(TreeNode* root){
+    if(root==nullptr)
+    return 0;
+    int lefth=height(root->left);
+    if(lefth==-1)return -1;
+    int righth=height(root->right);
+    if(righth==-1)return -1;
+    if(abs(lefth - righth)>1)
+    return -1;
+    return max(lefth,righth)+1;
+}
+    bool isBalanced(TreeNode* root) {
+        return height(root)!=-1;
+    }
+};
+
 
 
