@@ -18,3 +18,20 @@ public:
         return ismirror(root->left, root->right); 
     }
 };
+
+
+**************************************LEETCODE PROBLEM:112*****************************
+*********************https://leetcode.com/problems/path-sum/***************************
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+     if(root==nullptr){
+        return false;
+     }   
+     if(root->left== nullptr && root->right==nullptr){
+        return targetSum-root->val==0;
+     }
+     targetSum = targetSum-root->val;
+     return hasPathSum(root->left,targetSum) || hasPathSum(root->right,targetSum);
+    }
+};
