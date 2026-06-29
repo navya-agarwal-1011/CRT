@@ -23,6 +23,7 @@ class Solution {
         dfsHelper(adj,visited,ans,0);
         return ans;
     }
+};
 
 ******************************GEEKSFORGEEKS PROBLEM:BFS of graph ***********************************
 *****************************geeksforgeeks.org/problems/bfs-traversal-of-graph/1*********
@@ -49,5 +50,4 @@ class Solution {
       return ans;
         
     }
-};
 };
