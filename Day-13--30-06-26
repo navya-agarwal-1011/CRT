@@ -1,5 +1,8 @@
 ***********************************LEETCODE PROBLEM:547***************************
 ********https://leetcode.com/problems/number-of-provinces/description/************
+SPACE COMPLEXITY-O(N)[VISITED]+O(N)[RECURCIVE STACK]
+TIME COMPLEXITY-O(V+E)
+
 class Solution {
 public:
 
@@ -24,3 +27,5 @@ public:
         return count;
     }
 };
+
+
