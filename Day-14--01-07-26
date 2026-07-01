@@ -1,6 +1,6 @@
 ******************************GEEKSFORGEEKS:Consecutive 1's not allowed**********************
 *******************geeksforgeeks.org/problems/consecutive-1s-not-allowed1912*****************
-
+############# DYANAMIC PROGRAMMING ######################
 class Solution {
   public:
   int recursive(int n,vector<int> &dp){
@@ -18,3 +18,24 @@ class Solution {
         
     }
 };
+
+##################### OTHER APPROACH ###################
+
+ int countStrings(int  n){
+        if(n==1) return 2;
+        if(n==2) return 3;
+        
+        int prev1=3;
+        int prev1=2;
+        for(int i=3;i<=n;i++){
+            int curr=prev1+prev2;
+            prev2=prev1;
+            prev1=curr;
+        }
+        return prev1;
+    }
+
+************************************LEETCODE PROBLEM:509*********************************
+**************************https://leetcode.com/problems/fibonacci-number/****************
+
+
